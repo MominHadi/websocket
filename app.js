@@ -129,10 +129,10 @@ function broadcastToAuction(auctionId, message) {
     });
 }
 
-// Start the Express HTTP server and WebSocket server
+// Start the Express HTTP server and WebSocket server 
 const port = process.env.PORT || 7080;
 
 server.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on ${port}`);
     console.log(`WebSocket server is listening on ws://localhost:${port}`);
 });
