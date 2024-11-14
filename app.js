@@ -7,12 +7,12 @@
 
     // Create HTTP server using Express
     const server = http.createServer(app);
-
+    
     // Create WebSocket server attached to HTTP server
     const wss = new WebSocket.Server({ server });
 
     // Keep track of all connected clients
-    let clients = [];
+    let clients = []
 
     // Create MySQL connection pool
     const db = mysql.createPool({
