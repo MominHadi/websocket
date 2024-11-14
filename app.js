@@ -7,7 +7,7 @@
 
     // Create HTTP server using Express
     const server = http.createServer(app);
-    
+
     // Create WebSocket server attached to HTTP server
     const wss = new WebSocket.Server({ server });
 
@@ -90,7 +90,7 @@
                         broadcastToAuction(auctionId, payload);
 
                         // Optionally, store the auction status with the key
-                        await db.query('INSERT INTO auction_status (auction_id, stock_hash) VALUES (?, ?)', [auctionId, parsedMessage.key]);
+                        await db.query('INSERT INTO auction_statuses (auction_id, stock_hash) VALUES (?, ?)', [auctionId, parsedMessage.key]);
                     }
                 } catch (err) {
                     console.error('Error handling message:', err.message);
