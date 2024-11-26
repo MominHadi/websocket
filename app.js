@@ -47,7 +47,7 @@ wss.on('connection', function connection(ws, req) {
         console.log(clients, 'CLients')
         let key = 1
         // Notify the client they've connected
-        ws.send(JSON.stringify({ type: 'set-user', message: 'You are connected!', stock_hash: key }));
+        ws.send(JSON.stringify({ type: 'set-user', message: 'You are connected!', stock_hash: key ,amount:1000}));
 
         setInterval(() => {
             ws.send(JSON.stringify({ type: 'stock_hash', stock_hash: key }));
